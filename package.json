@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Backend",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "pnpm biome format --write",
+    "build": "pnpm turbo run build",
+    "bootstrap": "cd bootstrap && terraform init && terraform apply"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^2.5.6",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "@biomejs/biome": "^2.2.4",
+    "pino": "^9.9.5"
+  },
+  "packageManager": "pnpm@10.12.1"
+}

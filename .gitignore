@@ -1,0 +1,8 @@
+**/node_modules
+**/dist
+**/.turbo
+**/generated
+**/bundle
+.terraform**
+terraform**
+tsconfig.tsbuildinfo

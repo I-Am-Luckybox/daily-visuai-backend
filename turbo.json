@@ -1,0 +1,18 @@
+{
+    "$schema": "https://turborepo.com/schema.json",
+    "ui": "tui",
+    "tasks": {
+        "build": {
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**"]
+        },
+        "lint": {
+            "dependsOn": ["^lint"]
+        },
+        "clean": {},
+        "fmt": {},
+        "test": {
+            "dependsOn": ["^build"]
+        }
+    }
+}
