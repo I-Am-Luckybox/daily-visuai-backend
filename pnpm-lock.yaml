@@ -7,13 +7,14 @@ settings:
 importers:
 
   .:
+    dependencies:
+      pino:
+        specifier: ^9.9.5
+        version: 9.9.5
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.2.4
         version: 2.2.4
-      pino:
-        specifier: ^9.9.5
-        version: 9.9.5
       turbo:
         specifier: ^2.5.6
         version: 2.5.6
@@ -25,12 +26,18 @@ importers:
         version: 3.2.4
 
   packages/cron-lambda:
+    dependencies:
+      utils:
+        specifier: workspace:^
+        version: link:../utils
     devDependencies:
       esbuild:
         specifier: ^0.25.9
         version: 0.25.9
 
   packages/rest-api: {}
+
+  packages/utils: {}
 
 packages:
 

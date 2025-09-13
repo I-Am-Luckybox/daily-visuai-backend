@@ -1,0 +1,20 @@
+{
+  "name": "utils",
+  "version": "0.0.0",
+  "description": "Shared utilities package",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm vitest",
+    "build": "pnpm tsc -b"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}

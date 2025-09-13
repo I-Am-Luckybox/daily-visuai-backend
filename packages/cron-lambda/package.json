@@ -14,6 +14,9 @@
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "utils": "workspace:^"
+  },
   "devDependencies": {
     "esbuild": "^0.25.9"
   }
