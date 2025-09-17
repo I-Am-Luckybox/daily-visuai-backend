@@ -1,10 +1,8 @@
-import { initTerraform, run, dirname } from "./util.mjs";
+import { fileURLToPath } from "url";
 import path from "path";
+import { deploy } from "../../../scripts/util.mjs";
 
-try {
-    initTerraform();
-    const tfDir = path.resolve(dirname, "../tf");
-    run("terraform apply", { cwd: tfDir });
-} catch (err) {
-    console.error("Deployment failed: ", err);
-}
+export const filename = fileURLToPath(import.meta.url);
+export const dirname = path.dirname(filename);
+
+deploy(dirname);

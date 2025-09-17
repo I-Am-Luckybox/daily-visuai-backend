@@ -1,4 +1,5 @@
 import { execSync } from "child_process";
+import { buildVars } from "./util.mjs";
 import { fileURLToPath } from "url";
 import path from "path";
 
@@ -9,12 +10,6 @@ const bootstrapDir = path.resolve(dirname, "../bootstrap");
 
 export function run(cmd, opts = {}) {
     return execSync(cmd, { stdio: "inherit", ...opts });
-}
-
-function buildVars(vars) {
-    return Object.entries(vars)
-        .map(([key, value]) => `-var="${key}=${value}"`)
-        .join(" ");
 }
 
 function bootstrap() {

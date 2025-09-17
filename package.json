@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "pnpm biome format --write",
     "build": "pnpm turbo run build",
-    "bootstrap": "cd scripts && node --env-file ../.env bootstrap.js"
+    "bootstrap": "cd scripts && node --env-file ../.env bootstrap.mjs"
   },
   "keywords": [],
   "author": "",
