@@ -9,11 +9,10 @@
     "formatter": {
         "enabled": true,
         "formatWithErrors": false,
-        "ignore": [],
         "attributePosition": "auto",
         "indentStyle": "space",
         "indentWidth": 4,
-        "lineWidth": 80,
+        "lineWidth": 160,
         "lineEnding": "lf"
     },
     "javascript": {

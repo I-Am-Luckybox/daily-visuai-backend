@@ -1,14 +1,15 @@
 {
-  "name": "rest-api",
-  "version": "0.0.0",
-  "description": "REST API",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pnpm tsc -b"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.12.1"
+    "name": "rest-api",
+    "version": "0.0.0",
+    "description": "REST API",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "pnpm tsc -b"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.12.1"
 }
