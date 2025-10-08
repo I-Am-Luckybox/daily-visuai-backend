@@ -7,9 +7,11 @@ export function run(cmd, opts = {}) {
 
 export function getBootstrapOutput(cwd) {
     const bootstrapDir = path.resolve(cwd, "../../../bootstrap");
-    const rawOutput = execSync(`terraform output`, { cwd: bootstrapDir }).toString();
+    const rawOutput = execSync(`terraform output`, {
+        cwd: bootstrapDir,
+    }).toString();
     const outputs = {};
-    rawOutput.split("\n").forEach(line => {
+    rawOutput.split("\n").forEach((line) => {
         const [key, ...value] = line.split(" = ");
         if (key && value.length) {
             outputs[key.trim()] = value;
@@ -27,9 +29,11 @@ export function initTerraform(cwd) {
 }
 
 export function buildVars(vars) {
-    return vars ? Object.entries(vars)
-        .map(([key, value]) => `-var="${key}=${value}"`)
-        .join(" ") : "";
+    return vars
+        ? Object.entries(vars)
+              .map(([key, value]) => `-var="${key}=${value}"`)
+              .join(" ")
+        : "";
 }
 
 export function deploy(cwd, vars) {

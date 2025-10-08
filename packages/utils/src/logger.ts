@@ -3,8 +3,7 @@ import { pino, Logger as PinoLogger } from "pino";
 export class Logger {
     private static logger: PinoLogger;
 
-    private constructor() {
-    }
+    private constructor() {}
 
     public static create(): PinoLogger {
         if (this.logger) {

@@ -1,7 +1,7 @@
-import { describe, it, vitest, expect } from 'vitest';
-import { Logger } from './logger';
+import { describe, it, vitest, expect } from "vitest";
+import { Logger } from "./logger.js";
 
-vitest.spyOn(Logger, 'create');
+vitest.spyOn(Logger, "create");
 
 describe("logger", () => {
     describe("create", () => {
@@ -16,5 +16,5 @@ describe("logger", () => {
             const logger2 = Logger.create();
             expect(logger1).toBe(logger2);
         });
-    })
+    });
 });

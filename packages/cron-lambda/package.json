@@ -1,24 +1,29 @@
 {
-  "name": "cron-lambda",
-  "version": "0.0.0",
-  "description": "Deployable worker that requests image generation",
-  "main": "index.js",
+    "name": "cron-lambda",
+    "version": "0.0.0",
+    "description": "Deployable worker that requests image generation",
+    "main": "index.js",
     "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pnpm tsc -b",
-    "bundle": "pnpm build && pnpm esbuild src/index.ts --bundle --platform=node --target=node22 --outfile=bundle/index.js --external:aws-sdk",
-    "deploy": "pnpm bundle && pnpm node ./scripts/deploy.mjs",
-    "destroy": "pnpm node ./scripts/destroy.mjs"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.12.1",
-  "dependencies": {
-    "utils": "workspace:^"
-  },
-  "devDependencies": {
-    "esbuild": "^0.25.9"
-  }
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "pnpm tsc -b",
+        "bundle": "pnpm build && pnpm esbuild dist/index.js --bundle --platform=node --target=node22 --outfile=bundle/index.js --external:aws-sdk",
+        "deploy": "pnpm bundle && pnpm node ./scripts/deploy.mjs",
+        "destroy": "pnpm node ./scripts/destroy.mjs",
+        "clean": "rm -rf ./dist && rm -rf ./bundle && rm tsconfig.tsbuildinfo"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.12.1",
+    "dependencies": {
+        "utils": "workspace:^",
+        "exponential-backoff": "^3.1.2",
+        "openai": "^6.2.0",
+        "@aws-sdk/client-s3": "^3.901.0"
+    },
+    "devDependencies": {
+        "esbuild": "^0.25.9",
+        "@types/node": "^24.7.0"
+    }
 }
