@@ -35,7 +35,7 @@ resource "cockroach_cluster" "cockroach_cluster" {
   plan = "BASIC"
   serverless = {
     usage_limits = {
-      request_unit_limit = 4000
+      request_unit_limit = 4000000
       storage_mib_limit = 2000
     }
   }
