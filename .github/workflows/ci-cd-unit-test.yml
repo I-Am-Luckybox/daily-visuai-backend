@@ -1,0 +1,19 @@
+name: CI/CD Unit Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup NodeJS ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+    - run: pnpm i && pnpm test
