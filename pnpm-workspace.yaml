@@ -1,2 +1,15 @@
 packages:
   - "packages/**"
+ignore:
+  - "node_modules"
+  - "dist"
+  - "bundle"
+  - "**/node_modules/**"
+  - "**/dist/**"
+  - "**/bundle/**"
+  - "**/build/**"
+  - "**/.turbo/**"
+  - "**/.biome/**"
+  - "**/.vscode/**"
+  - "**/.idea/**"
+  - "**/.git/**"

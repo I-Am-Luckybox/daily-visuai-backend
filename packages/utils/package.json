@@ -6,7 +6,9 @@
     "type": "module",
     "scripts": {
         "test": "pnpm vitest",
-        "build": "pnpm tsc -b"
+        "test:run": "pnpm vitest run",
+        "build": "pnpm tsc -b",
+        "clean": "rm -rf ./dist && rm tsconfig.tsbuildinfo"
     },
     "keywords": [],
     "author": "",
@@ -17,5 +19,8 @@
             "import": "./dist/index.js",
             "types": "./dist/index.d.ts"
         }
+    },
+    "dependencies": {
+        "random": "5.4.1"
     }
 }

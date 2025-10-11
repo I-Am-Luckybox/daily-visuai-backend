@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "description": "Backend",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "pnpm turbo run test:run",
         "lint": "pnpm biome format --write",
         "build": "pnpm turbo run build",
         "clean": "pnpm turbo run clean",

@@ -5,7 +5,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "pnpm vitest",
+        "test:run": "pnpm vitest run",
         "build": "pnpm tsc -b",
         "bundle": "pnpm build && pnpm esbuild dist/index.js --bundle --platform=node --target=node22 --outfile=bundle/index.js --external:aws-sdk",
         "deploy": "pnpm bundle && pnpm node ./scripts/deploy.mjs",

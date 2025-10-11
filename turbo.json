@@ -11,7 +11,7 @@
         },
         "clean": {},
         "fmt": {},
-        "test": {
+        "test:run": {
             "dependsOn": ["^build"]
         }
     }
