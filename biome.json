@@ -1,7 +1,4 @@
 {
-    "files": {
-        "includes": ["src/**/*.js", "src/**/*.ts"]
-    },
     "linter": {
         "rules": {
             "style": {
