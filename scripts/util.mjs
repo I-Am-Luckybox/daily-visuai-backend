@@ -21,6 +21,7 @@ export function getBootstrapOutput(cwd) {
 }
 
 export function initTerraform(cwd) {
+    console.log("Initializing bootstrap TF...");
     const output = getBootstrapOutput(cwd);
     const { bucket_id: bucketId, bucket_region: bucketRegion } = output;
     const tfDir = path.resolve(cwd, "../tf");
@@ -40,7 +41,6 @@ export function deploy(cwd, vars) {
     try {
         initTerraform(cwd);
         const cmdInput = buildVars(vars);
-        console.log(v);
         run(`terraform apply ${cmdInput}`, { cwd: path.resolve(cwd, "../tf") });
     } catch (err) {
         console.error("Deployment failed: ", err);
@@ -54,4 +54,11 @@ export function destroy(cwd) {
     } catch (err) {
         console.error("Destroy failed: ", err);
     }
+}
+
+export function getEnvSafe(key) {
+    if (!process.env[key]) {
+        throw new Error(`Missing env ${key}`);
+    }
+    return process.env[key];
 }

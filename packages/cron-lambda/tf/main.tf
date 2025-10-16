@@ -22,3 +22,8 @@ module "lambda" {
   source = "./modules/lambda"
   iam_role_arn = module.role.iam_role_arn
 }
+
+module "secrets" {
+  source = "./modules/secrets"
+  lambda_secrets = var.lambda_secrets
+}
