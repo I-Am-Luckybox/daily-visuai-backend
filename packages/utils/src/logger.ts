@@ -1,4 +1,4 @@
-import { pino, Logger as PinoLogger } from "pino";
+import { Logger as PinoLogger, pino } from "pino";
 
 export class Logger {
     private static logger: PinoLogger;
@@ -6,10 +6,10 @@ export class Logger {
     private constructor() {}
 
     public static create(): PinoLogger {
-        if (this.logger) {
-            return this.logger;
+        if (Logger.logger) {
+            return Logger.logger;
         }
-        this.logger = pino();
-        return this.logger;
+        Logger.logger = pino();
+        return Logger.logger;
     }
 }

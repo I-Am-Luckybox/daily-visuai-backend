@@ -1,7 +1,7 @@
-import { OpenAI } from "openai";
-import { AiImageRequester, AiImageRequesterConfig } from "../ai-image-requester.js";
-import { Trend } from "../../trend/trend-fetcher.js";
 import { backOff } from "exponential-backoff";
+import { OpenAI } from "openai";
+import { Trend } from "../../trend/trend-fetcher.js";
+import { AiImageRequester, AiImageRequesterConfig } from "../ai-image-requester.js";
 
 export class OpenAiImageRequester extends AiImageRequester {
     private readonly DEFAULT_GENERATE_CONFIG: Partial<OpenAI.ImageGenerateParamsNonStreaming> = {

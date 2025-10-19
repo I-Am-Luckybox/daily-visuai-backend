@@ -1,5 +1,5 @@
-import { execSync } from "child_process";
-import path from "path";
+import { execSync } from "node:child_process";
+import path from "node:path";
 
 export function run(cmd, opts = {}) {
     return execSync(cmd, { stdio: "inherit", ...opts });

@@ -1,4 +1,4 @@
-import { describe, it, vitest, expect } from "vitest";
+import { describe, expect, it, vitest } from "vitest";
 import { Logger } from "./logger.js";
 
 vitest.spyOn(Logger, "create");

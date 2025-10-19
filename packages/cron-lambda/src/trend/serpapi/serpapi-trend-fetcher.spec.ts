@@ -1,8 +1,8 @@
-import { describe, it, vi, expect, beforeAll } from "vitest";
-import { SerpapiResponse, SerpApiTrendFetcher } from "./serpapi-trend-fetcher.js";
-import { DeepOptional } from "utils";
 import { beforeEach } from "node:test";
+import { DeepOptional } from "utils";
+import { beforeAll, describe, expect, it, vi } from "vitest";
 import { GoogleTrendCategoryIds } from "../constants/google-trend-category.js";
+import { SerpApiTrendFetcher, SerpapiResponse } from "./serpapi-trend-fetcher.js";
 
 describe("SerpApiTrendFetcher", () => {
     beforeAll(async () => {

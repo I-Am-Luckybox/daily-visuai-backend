@@ -1,6 +1,6 @@
+import { SSMClient } from "@aws-sdk/client-ssm";
 import { describe, expect, it, vi } from "vitest";
 import { SecretManager } from "./secret-manager.js";
-import { SSMClient } from "@aws-sdk/client-ssm";
 
 const mocks = vi.hoisted(() => ({
     mockSend: vi.fn(),

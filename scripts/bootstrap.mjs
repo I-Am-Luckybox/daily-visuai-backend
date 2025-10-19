@@ -1,7 +1,7 @@
-import { execSync } from "child_process";
+import { execSync } from "node:child_process";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { buildVars } from "./util.mjs";
-import { fileURLToPath } from "url";
-import path from "path";
 
 export const filename = fileURLToPath(import.meta.url);
 export const dirname = path.dirname(filename);

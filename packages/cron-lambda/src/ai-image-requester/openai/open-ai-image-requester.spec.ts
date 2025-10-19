@@ -1,6 +1,6 @@
+import { ImageGenerateParamsNonStreaming } from "openai/resources";
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { OpenAiImageRequester } from "./open-ai-image-requester.js";
-import { ImageGenerateParamsNonStreaming } from "openai/resources";
 
 const mocks = vi.hoisted(() => ({
     generateMock: vi.fn(),

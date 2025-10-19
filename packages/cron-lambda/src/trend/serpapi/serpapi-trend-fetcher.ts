@@ -1,7 +1,7 @@
+import { backOff } from "exponential-backoff";
 import { seededShuffle } from "utils";
 import { GoogleTrendCategoryIds } from "../constants/google-trend-category.js";
 import { Trend, TrendFetcher } from "../trend-fetcher.js";
-import { backOff } from "exponential-backoff";
 
 class NoTrendsFoundException extends Error {}
 

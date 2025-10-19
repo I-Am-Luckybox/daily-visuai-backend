@@ -1,5 +1,5 @@
-import { fileURLToPath } from "url";
-import path from "path";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { deploy, getEnvSafe } from "../../../scripts/util.mjs";
 
 export const filename = fileURLToPath(import.meta.url);
