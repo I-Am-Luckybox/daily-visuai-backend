@@ -16,4 +16,5 @@ jobs:
       uses: actions/setup-node@v4
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
-    - run: pnpm i && pnpm test
+    - name: Test
+      run: pnpm i && pnpm test
