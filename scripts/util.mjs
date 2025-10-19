@@ -47,10 +47,11 @@ export function deploy(cwd, vars) {
     }
 }
 
-export function destroy(cwd) {
+export function destroy(cwd, vars) {
     try {
         initTerraform(cwd);
-        run("terraform destroy", { cwd: path.resolve(cwd, "../tf") });
+        const cmdInput = buildVars(vars);
+        run(`terraform destroy ${cmdInput}`, { cwd: path.resolve(cwd, "../tf") });
     } catch (err) {
         console.error("Destroy failed: ", err);
     }
