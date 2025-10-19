@@ -1,4 +1,7 @@
 {
+    "files": {
+        "includes": ["scripts/**/*.mjs", "packages/**/*.mjs", "packages/**/*.ts", "!**/dist", "!**/generated"]
+    },
     "linter": {
         "rules": {
             "style": {
