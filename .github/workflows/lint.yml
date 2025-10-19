@@ -1,4 +1,4 @@
-name: CI/CD Unit Test
+name: Lint
 
 on:
   push:
@@ -12,9 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Setup NodeJS
-      uses: actions/setup-node@v4
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
-    - name: Test
-      run: pnpm i && pnpm test
+    - name: Lint
+      run: pnpm i && pnpm biome check
