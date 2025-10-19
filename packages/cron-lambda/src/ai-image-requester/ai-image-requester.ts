@@ -6,7 +6,7 @@ export type AiImageRequesterConfig = {
 };
 
 export abstract class AiImageRequester {
-    protected logger = Logger.create();
+    protected logger = Logger.create()
 
     constructor(protected readonly config: AiImageRequesterConfig) {}
 
