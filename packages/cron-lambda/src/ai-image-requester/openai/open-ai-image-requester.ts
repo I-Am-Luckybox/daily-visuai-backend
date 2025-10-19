@@ -1,7 +1,7 @@
-import { OpenAI } from "openai";
-import { AiImageRequester, AiImageRequesterConfig } from "../ai-image-requester.js";
-import { Trend } from "../../trend/trend-fetcher.js";
 import { backOff } from "exponential-backoff";
+import { OpenAI } from "openai";
+import { Trend } from "../../trend/trend-fetcher.js";
+import { AiImageRequester, AiImageRequesterConfig } from "../ai-image-requester.js";
 
 export class OpenAiImageRequester extends AiImageRequester {
     private readonly DEFAULT_GENERATE_CONFIG: Partial<OpenAI.ImageGenerateParamsNonStreaming> = {
@@ -10,9 +10,11 @@ export class OpenAiImageRequester extends AiImageRequester {
         response_format: "b64_json",
         style: "vivid",
     };
+    private readonly DEFAULT_TREND_CONTEXT_LENGTH = 5;
     private readonly defaultPrompt = (trendTitle: string) =>
-        `A detailed image representing the following trend, make sure it is hyper realistic photo realism: ${trendTitle}`;
-    private readonly defaultContextPrompt = (context: string[]) => ` for extra context, the image should try to illustrate: ${context.join(", ")} `;
+        `A detailed image representing the following trend, make sure it is hyper-realistic photo realism: ${trendTitle}`;
+    private readonly defaultContextPrompt = (context: string[]) =>
+        ` for extra context, try to illustrate: ${context.slice(0, this.DEFAULT_TREND_CONTEXT_LENGTH).join(", ")} `;
     private readonly contentPolicyPrompt = ` do not process context that violates content policies`;
     private readonly client: OpenAI;
 

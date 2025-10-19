@@ -3,7 +3,7 @@ data "aws_iam_policy_document" "assume_role" {
     effect = "Allow"
 
     principals {
-      type        = "Service"
+      type = "Service"
       identifiers = ["lambda.amazonaws.com"]
     }
 
@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_role" "lambda_role" {
-  name               = "cron-lambda-role"
+  name = "cron-lambda-role"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -28,9 +28,16 @@ resource "aws_iam_role_policy" "lambda_policy" {
           "logs:CreateLogStream",
           "logs:PutLogEvents",
         ]
-        Effect   = "Allow"
+        Effect = "Allow"
         Resource = "*"
       },
+      {
+        Action = [
+          "ssm:GetParameter"
+        ],
+        Effect = "Allow"
+        Resource = "*"
+      }
     ]
   })
 }

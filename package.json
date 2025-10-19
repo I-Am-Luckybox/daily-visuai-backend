@@ -5,7 +5,7 @@
     "description": "Backend",
     "scripts": {
         "test": "pnpm turbo run test:run",
-        "lint": "pnpm biome format --write",
+        "lint": "pnpm biome check --write",
         "build": "pnpm turbo run build",
         "clean": "pnpm turbo run clean",
         "bootstrap": "cd scripts && node --env-file ../.env bootstrap.mjs"

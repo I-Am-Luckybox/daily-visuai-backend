@@ -1,7 +1,14 @@
 {
+    "files": {
+        "includes": ["scripts/**/*.mjs", "**/packages/**/*.mjs", "**/packages/**/*.ts", "!**/dist", "!**/generated", "!**/bundle"]
+    },
     "linter": {
         "rules": {
             "style": {
+                "useNodejsImportProtocol": {
+                    "level": "warn",
+                    "fix": "safe"
+                },
                 "useImportType": "off"
             }
         }
