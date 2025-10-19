@@ -5,6 +5,10 @@
     "linter": {
         "rules": {
             "style": {
+                "useNodejsImportProtocol": {
+                    "level": "warn",
+                    "fix": "safe"
+                },
                 "useImportType": "off"
             }
         }
