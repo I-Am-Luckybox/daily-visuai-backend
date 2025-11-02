@@ -17,7 +17,7 @@
         "pino": "^10.1.0"
     },
     "devDependencies": {
-        "turbo": "^2.5.8",
+        "turbo": "^2.6.0",
         "typescript": "^5.9.3",
         "vitest": "^3.2.4",
         "@biomejs/biome": "^2.2.6"
